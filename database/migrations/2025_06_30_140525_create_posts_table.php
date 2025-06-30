@@ -25,7 +25,7 @@ return new class extends Migration
             $table->unsignedInteger('views')->default(0);
             $table->boolean('is_featured')->default(false);
             $table->timestamps();
-            
+
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('set null');
             $table->foreign('author_id')->references('id')->on('users')->onDelete('cascade');
             $table->index(['status', 'published_at']);
